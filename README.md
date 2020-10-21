@@ -2,7 +2,7 @@
 
 ## Proyecto:
 ### Next.js
-### React
+@ React
 ### Firebase
 ### Mobile Only
 
