@@ -1,122 +1,70 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.link {
+  color: peru;
+}
+
+.contenedor {
+  display: grid;
+  height: 100vh;
+  place-items: center;
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer img {
-  margin-left: 0.5rem;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
+  background: #fff;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.header {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  padding: 10px;
+  height: 100%;
 }
 
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.header img {
+  width: 120px;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.header h1 {
+  font-weight: 800;
+  color: #0099ff;
+  margin-bottom: 0;
 }
 
-.logo {
-  height: 1em;
+.header h2 {
+  font-size: 18px;
+  color: #1c5480;
+  margin: 5px;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.buttonLogin {
+  display: flex;
+  align-items: center;
+  background: #151515;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  border: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buttonLogin > :global(svg) {
+  margin-right: 10px;
+}
+
+.buttonLogin:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 520px) {
+  .main {
+    width: 520px;
+    height: 90vh;
   }
 }

@@ -4,13 +4,33 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: radial-gradient(#0099ff4d 1px, transparent 1px),
+    radial-gradient(#0099ff4d 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
 }
 
 a {
-  color: inherit;
+  color: peru;
   text-decoration: none;
+}
+
+a:hover {
+  color: chocolate;
 }
 
 * {
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.color_primary {
+  color: #0099ff;
+}
+
+.colors_econdary {
+  color: #1c5480;
 }

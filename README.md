@@ -1,6 +1,4 @@
-
 # Clon de Twitter usando NextJS
-
 
 # Proyecto:
 
@@ -8,7 +6,6 @@ Next.js
 React
 Firebase
 Mobile Only
-
 
 ## Empezar a desarrollar
 
