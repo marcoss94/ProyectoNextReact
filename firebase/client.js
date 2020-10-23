@@ -14,13 +14,16 @@ const firebaseConfig = {
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig)
 
+const db = firebase.firestore()
+
 const mapUserFromFirebaseAuthToUser = (user) => {
-  const { displayName, photoURL, email } = user
+  const { displayName, photoURL, email, uid } = user
 
   return {
     avatar: photoURL,
     username: displayName,
     email,
+    uid,
   }
 }
 
@@ -34,4 +37,38 @@ export const onAuthStateChanged = (onChange) => {
 export const loginWithGitHub = () => {
   const githubProvider = new firebase.auth.GithubAuthProvider()
   return firebase.auth().signInWithPopup(githubProvider)
+}
+
+export const addDevit = ({ avatar, content, userId, userName }) => {
+  return db.collection("devit").add({
+    avatar,
+    content,
+    userId,
+    userName,
+    createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
+    likeCount: 0,
+    sharedCount: 0,
+  })
+}
+
+export const fetchLatestDevits = () => {
+  return db
+    .collection("devit")
+    .get()
+    .then((snapshot) => {
+      return snapshot.docs.map((doc) => {
+        const data = doc.data()
+        const id = doc.id
+        const { createdAt } = data
+        const date = new Date(createdAt.seconds * 1000)
+        const normalizedCreatedAt = new Intl.DateTimeFormat("es-ES").format(
+          date
+        )
+        return {
+          ...data,
+          id,
+          createdAt: normalizedCreatedAt,
+        }
+      })
+    })
 }

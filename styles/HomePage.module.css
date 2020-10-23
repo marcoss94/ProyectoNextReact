@@ -1,26 +1,26 @@
 .header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   height: 49px;
   position: sticky;
   display: flex;
   align-items: center;
   top: 0;
   width: 100%;
+  background: #ffffffaa;
+  backdrop-filter: blur(5px);
 }
 
 .header > h2 {
   font-size: 21px;
   font-weight: 800;
-}
-
-.section {
-  padding-top: 49px;
+  padding-left: 15px;
 }
 
 .nav {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #eee;
   position: sticky;
   bottom: 0;
   height: 49px;
   width: 100%;
+  background: #ffffff;
 }

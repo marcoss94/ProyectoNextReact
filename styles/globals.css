@@ -8,11 +8,18 @@ body {
     radial-gradient(#0099ff4d 1px, transparent 1px);
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px;
+  overflow: hidden;
 }
 
 a {
   color: peru;
   text-decoration: none;
+}
+
+textarea,
+input {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a:hover {
@@ -47,6 +54,7 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   height: 100%;
+  overflow-y: auto;
   width: 100%;
 }
 

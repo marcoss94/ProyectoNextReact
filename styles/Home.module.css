@@ -38,6 +38,7 @@
   cursor: pointer;
   border: 0;
   transition: opacity 0.3s ease;
+  user-select: none;
 }
 
 .buttonLogin > :global(svg) {
@@ -46,4 +47,9 @@
 
 .buttonLogin:hover {
   opacity: 0.7;
+}
+
+.buttonLogin[disabled] {
+  pointer-events: none;
+  opacity: 0.2;
 }
