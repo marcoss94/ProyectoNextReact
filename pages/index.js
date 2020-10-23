@@ -4,6 +4,7 @@ import GitHubSVG from "../components/icons/GitHub"
 import styles from "../styles/Home.module.css"
 import { loginWithGitHub, onAuthStateChanged } from "../firebase/client"
 import { useEffect, useState } from "react"
+import Avatar from "../components/avatar/Avatar"
 
 export default function Home() {
   const [user, setUser] = useState(undefined)
@@ -29,10 +30,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.contenedor}>
-        <main className={styles.main}>
+      <div className="contenedor">
+        <main className="main">
           <div className={styles.header}>
-            <img src="/gorjeo.png" alt="logo" />
+            <img className={styles.img} src="/gorjeo.png" alt="logo" />
             <h1 className={styles.title}>Welcome to Devter</h1>
             <h2 className={styles.title}>
               Talk about development with developers
@@ -47,8 +48,11 @@ export default function Home() {
               )}
               {user && user.avatar && (
                 <div>
-                  <img src={user.avatar} />
-                  <strong>{user.username}</strong>
+                  <Avatar
+                    src={user.avatar}
+                    alt={user.username}
+                    text={user.username}
+                  />
                 </div>
               )}
             </div>

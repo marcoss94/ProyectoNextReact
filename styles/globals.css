@@ -34,3 +34,25 @@ a:hover {
 .colors_econdary {
   color: #1c5480;
 }
+
+.contenedor {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.main {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 520px) {
+  .main {
+    width: 520px;
+    height: 90vh;
+  }
+}

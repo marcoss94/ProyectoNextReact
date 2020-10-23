@@ -1,0 +1,16 @@
+.avatar {
+  padding-right: 10px;
+}
+
+.textBox {
+}
+.textBox > p {
+  line-height: 1.3125;
+  margin: 0;
+}
+
+.article {
+  border-bottom: 2px solid #c4f8fd;
+  display: flex;
+  padding: 10px 15px;
+}
