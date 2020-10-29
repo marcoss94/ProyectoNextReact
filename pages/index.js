@@ -24,30 +24,24 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Devter</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="contenedor">
-        <main className="main">
-          <div className={styles.header}>
-            <img className={styles.img} src="/gorjeo.png" alt="logo" />
-            <h1 className={styles.title}>Welcome to Devter</h1>
-            <h2 className={styles.title}>
-              Talk about development with developers
-            </h2>
+      <div className={styles.header}>
+        <img className={styles.img} src="/gorjeo.png" alt="logo" />
+        <h1 className={styles.title}>Welcome to Devter</h1>
+        <h2 className={styles.title}>Talk about development with developers</h2>
 
-            <div>
-              {user === null && (
-                <Button onClick={handleClick}>
-                  <GitHubSVG fill="white" width={24} height={24} />
-                  Login with GitHub
-                </Button>
-              )}
-              {user === undefined && <img src="/loading.gif" />}
-            </div>
-          </div>
-        </main>
+        <div>
+          {user === null && (
+            <Button onClick={handleClick}>
+              <GitHubSVG fill="white" width={24} height={24} />
+              Login with GitHub
+            </Button>
+          )}
+          {user === undefined && <img src="/loading.gif" />}
+        </div>
       </div>
     </div>
   )

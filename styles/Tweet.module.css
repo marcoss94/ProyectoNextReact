@@ -1,5 +1,6 @@
 .textarea {
-  border: 0;
+  border: 3px solid transparent;
+  border-radius: 10px;
   font-size: 21px;
   padding: 15px;
   resize: none;
@@ -8,6 +9,43 @@
   min-height: 200px;
 }
 
+.drag {
+  border: 3px dashed #09f;
+}
+
 .button {
   padding: 15px;
+}
+
+.section {
+  position: relative;
+}
+
+.form_container {
+  align-items: flex-start;
+  display: flex;
+}
+
+.avatar {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.buttonX {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  color: #fff;
+  font-size: 24px;
+  border: 0;
+  border-radius: 999px;
+  width: 32px;
+  top: 15px;
+  height: 32px;
+  right: 15px;
+}
+
+.img {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
 }
