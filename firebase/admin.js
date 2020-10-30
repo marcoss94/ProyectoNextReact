@@ -1,11 +1,25 @@
 var admin = require("firebase-admin")
 
-var serviceAccount = require("./firebase-keys.json")
+// var serviceAccount = require("./firebase-keys.json")
+var serviceAccount = {
+  type: process.env.FIREBASE_CONFIG_TYPE,
+  project_id: process.env.FIREBASE_CONFIG_PROJECT_ID,
+  private_key_id: process.env.FIREBASE_CONFIG_PRIVATE_KEY_ID,
+  private_key: process.env.FIREBASE_CONFIG_PRIVATE_KEY,
+  client_email: process.env.FIREBASE_CONFIG_CLIENT_EMAIL,
+  client_id: process.env.FIREBASE_CONFIG_CLIENT_ID,
+  auth_uri: process.env.FIREBASE_CONFIG_AUTH_URI,
+  token_uri: process.env.FIREBASE_CONFIG_TOKEN_URI,
+  auth_provider_x509_cert_url:
+    process.env.FIREBASE_CONFIG_AUTH_PROVIDER_x509_CERT_URL,
+  client_x509_cert_url: process.env.FIREBASE_CONFIG_CLIENT_x509_CERT_URL,
+}
 
 try {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://twitterclone-nextjs-b371a.firebaseio.com",
+    // credential: JSON.parse(process.env.NEXT_PUPLIC_FIREBASE_CONFIG),
+    databaseURL: process.env.NEXT_PUPLIC_FIREBASE_DATABASE_URL,
   })
 } catch (e) {}
 

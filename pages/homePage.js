@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Devit from "../components/devit/Devit"
-import { fetchLatestDevits } from "../firebase/client"
+import { listenLatestDevits } from "../firebase/client"
 import useUser from "../hooks/useUser"
 import styles from "../styles/HomePage.module.css"
 import Link from "next/link"
@@ -14,10 +14,18 @@ export default function HomePage() {
   const user = useUser()
 
   useEffect(() => {
-    user &&
-      fetchLatestDevits().then((timeline) => {
-        setTimeline(timeline)
+    // user &&
+    //   fetchLatestDevits().then((timeline) => {
+    //     setTimeline(timeline)
+    //   })
+    let unsubscribe
+    if (user) {
+      unsubscribe = listenLatestDevits((newDevits) => {
+        setTimeline(newDevits)
       })
+    }
+
+    return () => unsubscribe && unsubscribe()
   }, [user])
 
   return (
@@ -46,7 +54,7 @@ export default function HomePage() {
         })}
       </section>
       <nav className={styles.nav}>
-        <Link href="/home">
+        <Link href="/">
           <a>
             <Home width={32} height={32} stroke="#09f" />
           </a>
